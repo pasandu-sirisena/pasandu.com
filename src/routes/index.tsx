@@ -5,6 +5,8 @@ import contour from "@/assets/contour.png.asset.json";
 import l3logo from "@/assets/l3harris.png.asset.json";
 import cibcLogo from "@/assets/cibc.jpg.asset.json";
 import mcmasterLogo from "@/assets/mcmaster.jpg.asset.json";
+import robotImg from "@/assets/robot.jpg.asset.json";
+import scanImg from "@/assets/scan.png.asset.json";
 import { WaveDivider } from "@/components/WaveDivider";
 import { useScrollY } from "@/hooks/use-scroll-y";
 
