@@ -55,7 +55,7 @@ const experience = [
       "Deployed automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
       "Worked directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
     ],
-    tags: ["C/C++", "Test Automation", "Hardware Validation"],
+    tags: ["C++", "Test Automation", "Hardware Validation"],
   },
   {
     role: "Software Development & IT Project Management Intern",
@@ -64,7 +64,7 @@ const experience = [
     period: "May 2025 - Aug 2025",
     logo: cibcLogo.url,
     points: [
-      "Built and tested a critical Java/Spring Boot microservice with JUnit 5 and Mockito, cutting regression bugs by over 40%.",
+      "Built and tested critical Java/Spring Boot microservices with JUnit 5 and Mockito, cutting regression bugs by over 40%.",
       "Tracked financial resources for $1M+ in technology infrastructure projects using Agile methodologies and Jira.",
       "Led a $25K Azure server migration, upgrading critical RHEL systems across development, testing and production environments.",
     ],
@@ -76,75 +76,60 @@ const projects = [
   {
     title: "Custom RV32IM System-on-Chip",
     year: "August 2026",
-    points: [
-      "Built a complete 32-bit RISC-V processor in Verilog and ran it on an FPGA at 27 MHz.",
-      "Designed a 5-stage pipeline with hazard handling, data forwarding, and branch recovery.",
-      "Added a UART, GPIO, and memory bus so the core could run real programs from a custom assembler.",
-      "Used an open-source FPGA toolchain from synthesis to bitstream download.",
-    ],
-    tags: [
-      "Verilog",
-      "RISC-V",
-      "FPGA",
-      "Computer Architecture",
-    ],
+    repo: "https://github.com/pasandu-sirisena/rv32i-tang-primer",
+    blurb:
+      "This project centers on the development of a custom RISC-V processor architecture implemented on a Gowin Tang Primer 20K FPGA. The system integrates a soft-core processor with a standalone memory controller configured as a memory-mapped peripheral. The hardware logic was designed using Verilog to ensure precise control over instruction execution and data routing. This architecture allows for efficient memory access and instruction fetching tailored to the RISC-V specification. The resulting hardware provides a flexible platform for executing low-level firmware and managing custom digital signal processing workloads.",
+    tags: ["Verilog", "RISC-V", "FPGA", "Computer Architecture"],
   },
   {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
     year: "April 2026",
-    points: [
-      "Created a sensor that detects people and movement from ordinary Wi-Fi signals.",
-      "Programmed an ESP32 to capture raw channel data and filter out hardware noise.",
-      "Offloaded the heavy signal processing to an FPGA for faster parallel computation.",
-      "Wrote Python software on the host side to turn filtered data into motion alerts.",
-    ],
+    repo: "https://github.com/pasandu-sirisena/wifi-spatial-scanner",
+    blurb:
+      "This hardware system captures and analyzes wireless channel state information to map spatial environments. An ESP32 microcontroller serves as the radio frequency front-end to extract raw Wi-Fi telemetry data. This data is transmitted via a high-speed UART serial connection to a Sipeed Tang Primer 20K FPGA. The FPGA runs custom digital signal processing logic alongside a RISC-V orchestrator to calculate signal power and detect spatial disturbances. The hardware-accelerated pipeline allows for rapid processing of high-bandwidth radio frequency data without overwhelming a standard microcontroller.",
     tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA", "Signal Processing"],
   },
   {
     title: "Real-Time Software-Defined Radio (SDR)",
     year: "March - April 2026",
-    points: [
-      "Built an FM radio receiver on a Raspberry Pi with a low-cost RTL-SDR dongle.",
-      "Prototyped the signal processing chain in Python, then rewrote it in C++ for real-time audio.",
-      "Used multithreading and a FIFO queue to keep audio smooth and free of stuttering.",
-      "Added stereo decoding by recovering the pilot tone with a phase-locked loop.",
-    ],
+    repo: "https://github.com/pasandu-sirisena/software-defined-radio",
+    blurb:
+      "This software-defined radio processes frequency-modulated mono and stereo audio streams in real time. The system runs on a Raspberry Pi 4 and utilizes a C++ multithreading architecture with a producer-consumer pipeline to manage high-speed data from radio frequency hardware. Incoming signals undergo block-based decimation and polyphase resampling to step down the sample rates efficiently. The stereo processing path implements a phase-locked loop to synchronize a numerically controlled oscillator with the 19 kilohertz pilot tone. These optimizations allow the hardware to continuously output clear audio while adhering to strict computational constraints.",
     tags: ["C++", "Python", "DSP", "Raspberry Pi", "Multithreading"],
+  },
+  {
+    title: "AI Optimal Pathfinder",
+    year: "2025",
+    repo: "https://github.com/pasandu-sirisena/ai-optimal-pathfinder",
+    blurb:
+      "This Java application functions as an autonomous graph routing engine and real-time simulation. The software converts procedurally generated grid environments into weighted directed acyclic graphs. The system computes the optimal trajectory using multiple search algorithms, including Dijkstra and Bellman-Ford. The environment utilizes a custom objective function where the routing engine must maximize score rewards while minimizing penalty weights. The simulation animates a digital agent navigating the calculated optimal path in real time within a terminal interface.",
+    tags: ["Java", "Algorithms", "Graph Theory", "Simulation"],
   },
   {
     title: "FPGA-Based Image Decompressor",
     year: "Oct - Nov 2025",
-    points: [
-      "Designed a JPEG-style image decompressor on an FPGA in SystemVerilog with a partner.",
-      "Built the design as a pipeline of state machines that stream pixels through on-chip memory.",
-      "Shared multipliers and adders across states to keep the hardware footprint small.",
-      "Verified each milestone against reference data before running it on the FPGA board.",
-    ],
+    blurb:
+      "This hardware design implements an image decompression algorithm directly at the logic gate level to maximize processing throughput. The decompression pipeline is written in Verilog and synthesized for a field-programmable gate array. By utilizing parallel processing blocks, the hardware decodes compressed image frames faster than a sequential software implementation. Memory controllers are used to buffer the incoming compressed bitstream and output the reconstructed pixel data to external display interfaces. This project highlights the performance benefits of translating software algorithms into custom digital logic.",
     tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification", "VGA"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
     year: "March - April 2025",
-    points: [
-      "Made a 3D hallway scanner using a time-of-flight distance sensor on a rotating mount.",
-      "Wrote embedded firmware to spin the sensor, take readings, and send them to a PC.",
-      "Converted polar range data into Cartesian points and stacked scans into a 3D cloud.",
-      "Rendered the final point cloud in Open3D to visualize the mapped space.",
-    ],
+    repo: "https://github.com/pasandu-sirisena/3d-spatial-mapping-system",
+    blurb:
+      "This embedded spatial scanner uses a Time-of-Flight laser rangefinder to construct three-dimensional environmental meshes. The core hardware features an ARM Cortex-M4F microcontroller that drives a stepper motor and interfaces with the sensor using the inter-integrated circuit protocol. The sensor captures radial distance measurements at discrete angular intervals to generate cross-sectional data slices. This data is transmitted over a serial connection to a host computer running a Python application. The host software applies trigonometric transformations to convert the polar data into Cartesian coordinates and renders an interactive point cloud using the Open3D library.",
     tags: ["C/C++", "Microcontrollers", "Python", "Open3D", "I2C"],
   },
   {
     title: "Vital-E: ESP32 Autonomous Hospital Robot",
     year: "Feb 2025",
-    points: [
-      "Built an ESP32 robot that follows lines and avoids obstacles to deliver patient vitals.",
-      "Used infrared sensors and a PID motor controller to keep the robot on track.",
-      "Added ultrasonic proximity detection so it stops safely when something is in the way.",
-      "Streamed vital signs over Wi-Fi to a web dashboard for remote bedside monitoring.",
-    ],
+    repo: "https://github.com/Kurtis24/UtraHacks",
+    blurb:
+      "Vital-E is an autonomous robotic platform built around the ESP32 microcontroller to monitor patient health in low-resource clinical settings. The robot relies on a color sensor and line-following logic to navigate hospital corridors and reach patient bedsides. Once in position, the system lowers an articulated arm equipped with a heart rate sensor to capture physiological readings. A proximity sensor ensures the hardware aligns safely with the patient during data collection. The ESP32 then wirelessly transmits the acquired vital signs to a secure web dashboard for continuous monitoring by medical staff.",
     tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
   },
 ];
+
 
 
 const skills = [
