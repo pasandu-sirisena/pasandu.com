@@ -128,6 +128,7 @@ const projects: Project[] = [
     title: "3D Spatial Mapping System (ToF Sensor)",
     year: "March - April 2025",
     repo: "https://github.com/pasandu-sirisena/3d-spatial-mapping-system",
+    image: scanImg.url,
     blurb:
       "This embedded spatial scanner uses a Time-of-Flight laser rangefinder to construct three-dimensional environmental meshes. The core hardware features an ARM Cortex-M4F microcontroller that drives a stepper motor and interfaces with the sensor using the inter-integrated circuit protocol. The sensor captures radial distance measurements at discrete angular intervals to generate cross-sectional data slices. This data is transmitted over a serial connection to a host computer running a Python application. The host software applies trigonometric transformations to convert the polar data into Cartesian coordinates and renders an interactive point cloud using the Open3D library.",
     tags: ["C/C++", "Microcontrollers", "Python", "Open3D", "I2C"],
