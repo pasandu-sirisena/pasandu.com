@@ -115,14 +115,14 @@ const projects: Project[] = [
     repo: "https://github.com/pasandu-sirisena/ai-optimal-pathfinder",
     blurb:
       "This Java application functions as an autonomous graph routing engine and real-time simulation. The software converts procedurally generated grid environments into weighted directed acyclic graphs. The system computes the optimal trajectory using multiple search algorithms, including Dijkstra and Bellman-Ford. The environment utilizes a custom objective function where the routing engine must maximize score rewards while minimizing penalty weights. The simulation animates a digital agent navigating the calculated optimal path in real time within a terminal interface.",
-    tags: ["Java", "Algorithms", "Graph Theory", "Simulation"],
+    tags: ["Java", "Algorithms", "Simulation"],
   },
   {
     title: "FPGA-Based Image Decompressor",
     year: "Oct - Nov 2025",
     blurb:
       "This hardware design implements an image decompression algorithm directly at the logic gate level to maximize processing throughput. The decompression pipeline is written in Verilog and synthesized for a field-programmable gate array. By utilizing parallel processing blocks, the hardware decodes compressed image frames faster than a sequential software implementation. Memory controllers are used to buffer the incoming compressed bitstream and output the reconstructed pixel data to external display interfaces. This project highlights the performance benefits of translating software algorithms into custom digital logic.",
-    tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification", "VGA"],
+    tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
@@ -140,7 +140,7 @@ const projects: Project[] = [
     image: robotImg.url,
     blurb:
       "Vital-E is an autonomous robotic platform built around the ESP32 microcontroller to monitor patient health in low-resource clinical settings. The robot relies on a color sensor and line-following logic to navigate hospital corridors and reach patient bedsides. Once in position, the system lowers an articulated arm equipped with a heart rate sensor to capture physiological readings. A proximity sensor ensures the hardware aligns safely with the patient during data collection. The ESP32 then wirelessly transmits the acquired vital signs to a secure web dashboard for continuous monitoring by medical staff.",
-    tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
+    tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors"],
   },
 ];
 
