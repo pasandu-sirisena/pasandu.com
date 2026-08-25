@@ -137,6 +137,7 @@ const projects: Project[] = [
     title: "Vital-E: ESP32 Autonomous Hospital Robot",
     year: "Feb 2025",
     repo: "https://github.com/Kurtis24/UtraHacks",
+    image: robotImg.url,
     blurb:
       "Vital-E is an autonomous robotic platform built around the ESP32 microcontroller to monitor patient health in low-resource clinical settings. The robot relies on a color sensor and line-following logic to navigate hospital corridors and reach patient bedsides. Once in position, the system lowers an articulated arm equipped with a heart rate sensor to capture physiological readings. A proximity sensor ensures the hardware aligns safely with the patient during data collection. The ESP32 then wirelessly transmits the acquired vital signs to a secure web dashboard for continuous monitoring by medical staff.",
     tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
