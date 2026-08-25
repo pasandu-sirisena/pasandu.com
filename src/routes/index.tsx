@@ -111,7 +111,7 @@ const projects: Project[] = [
   },
   {
     title: "AI Optimal Pathfinder",
-    year: "2025",
+    year: "Feb - March 2026",
     repo: "https://github.com/pasandu-sirisena/ai-optimal-pathfinder",
     blurb:
       "This Java application functions as an autonomous graph routing engine and real-time simulation. The software converts procedurally generated grid environments into weighted directed acyclic graphs. The system computes the optimal trajectory using multiple search algorithms, including Dijkstra and Bellman-Ford. The environment utilizes a custom objective function where the routing engine must maximize score rewards while minimizing penalty weights. The simulation animates a digital agent navigating the calculated optimal path in real time within a terminal interface.",
