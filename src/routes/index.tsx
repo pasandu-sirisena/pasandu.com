@@ -201,10 +201,38 @@ function SocialButtons() {
 }
 
 function TopBar() {
+  const scrollY = useScrollY();
+  const [viewportH, setViewportH] = useState(900);
+
+  useEffect(() => {
+    const update = () => setViewportH(window.innerHeight);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const start = viewportH * 0.45;
+  const end = viewportH * 0.85;
+  const t = Math.min(1, Math.max(0, (scrollY - start) / (end - start)));
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-sand/10 bg-navy-deep/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-3">
-        <span className="eyebrow text-sand">Computer Engineer</span>
+        <div className="relative min-w-0 flex-1 overflow-hidden">
+          <span
+            className="eyebrow block whitespace-nowrap text-sand"
+            style={{ transform: `translate3d(${t * 130}%, 0, 0)`, opacity: 1 - t }}
+          >
+            Computer Engineer
+          </span>
+          <span
+            aria-hidden={t < 0.5}
+            className="eyebrow absolute inset-0 block whitespace-nowrap text-sand"
+            style={{ transform: `translate3d(${(t - 1) * 130}%, 0, 0)`, opacity: t }}
+          >
+            Pasandu Sirisena
+          </span>
+        </div>
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-1">
           {NAV.map((n) => (
             <li key={n.href}>
