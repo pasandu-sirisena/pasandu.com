@@ -371,17 +371,32 @@ function Index() {
                   <h3 className="text-2xl font-medium">{p.title}</h3>
                   <p className="text-sm text-muted-foreground">{p.year}</p>
                 </div>
-                <ul className="mt-3 max-w-3xl space-y-1.5">
-                  {p.points.map((pt) => (
-                    <li
-                      key={pt}
-                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
-                    >
-                      {pt}
+                <div className="mt-3 flex flex-col gap-5 sm:flex-row sm:items-start">
+                  <p className="max-w-3xl flex-1 text-base leading-relaxed text-muted-foreground">
+                    {p.blurb}
+                  </p>
+                  {"image" in p && p.image ? (
+                    <img
+                      src={p.image as string}
+                      alt={`${p.title} preview`}
+                      loading="lazy"
+                      className="w-full shrink-0 rounded-xl border border-border object-cover sm:w-56"
+                    />
+                  ) : null}
+                </div>
+                <ul className="mt-4 flex flex-wrap items-center gap-2">
+                  {p.repo ? (
+                    <li>
+                      <a
+                        href={p.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-sm font-medium text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-navy-deep hover:bg-navy-deep hover:text-sand hover:shadow-sm"
+                      >
+                        <Github className="h-4 w-4" /> View Repo
+                      </a>
                     </li>
-                  ))}
-                </ul>
-                <ul className="mt-4 flex flex-wrap gap-2">
+                  ) : null}
                   {p.tags.map((t) => (
                     <li
                       key={t}
