@@ -5,6 +5,8 @@ import contour from "@/assets/contour.png.asset.json";
 import l3logo from "@/assets/l3harris.png.asset.json";
 import cibcLogo from "@/assets/cibc.jpg.asset.json";
 import mcmasterLogo from "@/assets/mcmaster.jpg.asset.json";
+import robotImg from "@/assets/robot.jpg.asset.json";
+import scanImg from "@/assets/scan.png.asset.json";
 import { WaveDivider } from "@/components/WaveDivider";
 import { useScrollY } from "@/hooks/use-scroll-y";
 
@@ -126,6 +128,7 @@ const projects: Project[] = [
     title: "3D Spatial Mapping System (ToF Sensor)",
     year: "March - April 2025",
     repo: "https://github.com/pasandu-sirisena/3d-spatial-mapping-system",
+    image: scanImg.url,
     blurb:
       "This embedded spatial scanner uses a Time-of-Flight laser rangefinder to construct three-dimensional environmental meshes. The core hardware features an ARM Cortex-M4F microcontroller that drives a stepper motor and interfaces with the sensor using the inter-integrated circuit protocol. The sensor captures radial distance measurements at discrete angular intervals to generate cross-sectional data slices. This data is transmitted over a serial connection to a host computer running a Python application. The host software applies trigonometric transformations to convert the polar data into Cartesian coordinates and renders an interactive point cloud using the Open3D library.",
     tags: ["C/C++", "Microcontrollers", "Python", "Open3D", "I2C"],
@@ -134,6 +137,7 @@ const projects: Project[] = [
     title: "Vital-E: ESP32 Autonomous Hospital Robot",
     year: "Feb 2025",
     repo: "https://github.com/Kurtis24/UtraHacks",
+    image: robotImg.url,
     blurb:
       "Vital-E is an autonomous robotic platform built around the ESP32 microcontroller to monitor patient health in low-resource clinical settings. The robot relies on a color sensor and line-following logic to navigate hospital corridors and reach patient bedsides. Once in position, the system lowers an articulated arm equipped with a heart rate sensor to capture physiological readings. A proximity sensor ensures the hardware aligns safely with the patient during data collection. The ESP32 then wirelessly transmits the acquired vital signs to a secure web dashboard for continuous monitoring by medical staff.",
     tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
