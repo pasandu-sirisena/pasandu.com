@@ -226,7 +226,7 @@ function TopBar() {
   }, []);
 
   const start = viewportH * 0.45;
-  const end = viewportH * 0.85;
+  const end = viewportH * 0.75;
   const t = Math.min(1, Math.max(0, (scrollY - start) / (end - start)));
 
   return (
