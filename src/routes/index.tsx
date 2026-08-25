@@ -55,7 +55,7 @@ const experience = [
     logo: l3logo.url,
     points: [
       "Wrote low-level C/C++ unit test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
-      "Deployed automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
+      "Deployed automated scripts and performance analysis tooling to systematically test hardware used in MX series electro-mechanical camera turrets.",
       "Worked directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
     ],
     tags: ["C++", "Test Automation", "Hardware Validation"],
@@ -497,7 +497,7 @@ function Index() {
       <footer id="contact" className="scroll-mt-20 bg-navy-deep">
         <div className="mx-auto max-w-5xl px-6 py-24">
           <h2 className="max-w-2xl text-4xl font-medium text-sand sm:text-5xl">
-            Currently looking for future opportunities in design verification and AI chip workflows.
+            On the lookout for future opportunities in design verification and AI chip workflows.
           </h2>
           <p className="eyebrow mt-3 text-sand-muted">Let's connect!</p>
           <p className="mt-4 max-w-xl text-lg text-sand/75">
