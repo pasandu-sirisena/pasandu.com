@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import contour from "@/assets/contour.png.asset.json";
 import l3logo from "@/assets/l3harris.png.asset.json";
@@ -72,7 +73,16 @@ const experience = [
   },
 ];
 
-const projects = [
+type Project = {
+  title: string;
+  year: string;
+  repo?: string;
+  image?: string;
+  blurb: string;
+  tags: string[];
+};
+
+const projects: Project[] = [
   {
     title: "Custom RV32IM System-on-Chip",
     year: "August 2026",
@@ -292,10 +302,10 @@ function Index() {
           </h1>
           <p className="eyebrow rise-in mt-5 text-sand-muted">Toronto, ON</p>
           <p className="rise-in mt-6 max-w-2xl text-xl leading-relaxed text-sand/80">
-            4th year computer engineering student at McMaster University, with a passion for digital
-            logic design, FPGA development, and high-performance compute architectures. I specialize
-            in bridging the gap between hardware architecture and low-level firmware to build
-            efficient embedded systems.
+            Hi! I'm a 4th year computer engineering student at McMaster University, with a passion
+            for digital logic design, FPGA development, and high-performance compute architectures.
+            I am interested in bridging the gap between hardware architecture and low-level firmware
+            to build efficient embedded systems.
           </p>
           <div className="rise-in mt-10">
             <SocialButtons />
@@ -375,9 +385,9 @@ function Index() {
                   <p className="max-w-3xl flex-1 text-base leading-relaxed text-muted-foreground">
                     {p.blurb}
                   </p>
-                  {"image" in p && p.image ? (
+                  {p.image ? (
                     <img
-                      src={p.image as string}
+                      src={p.image}
                       alt={`${p.title} preview`}
                       loading="lazy"
                       className="w-full shrink-0 rounded-xl border border-border object-cover sm:w-56"
